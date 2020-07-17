@@ -4,7 +4,7 @@ import styles from './Hero.scss';
 const Hero = () => (
     <header className={styles.component}>
         <h2 className={styles.title}>Hello world!</h2>
-        <img className={styles.image} src="images/space.png" />    
+        <img className={styles.image} src="http://uploads.kodilla.com/bootcamp/fer/11.react/space.png" />    
     </header>
 );
 
