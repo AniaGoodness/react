@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.scss';
-import styles from '../components/List/List.scss';
+import styles from '../List/List.scss';
 class App extends React.Component {
   render() {
     return (
