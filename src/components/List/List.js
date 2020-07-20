@@ -8,7 +8,7 @@ class List extends React.Component { // definicja klasy List. Klasa List dziedzi
     static propTypes = { // definicja typów propsów
         title: PropTypes.node.isRequired, // definicja typu Propsa (node) z zaznaczeniem że jest on wymagany (ten komponent MUSI otrzymać daną wartość)
         image: PropTypes.node.isRequired,
-        columns: PropTypes.array.isRequired,
+        titleColumn: PropTypes.node.isRequired,
         children: PropTypes.node.isRequired,
     };
     static defaultProps = { // ustawienie domyślnych wartości parametrów, kiedy nie zostanie podana żadna zawartośc opisu listy, czyli to jest domyślny opis listy
@@ -23,9 +23,9 @@ class List extends React.Component { // definicja klasy List. Klasa List dziedzi
                     {this.props.children}
                 </div>
                 <div className={styles.columns}>
-                    <Column titleColumn={'Animals'} />
-                    <Column titleColumn={'Plants'} />
-                    <Column titleColumn={'Minerals'} />
+                    <Column titleColumn={<div key='1'>Animals</div>} />
+                    <Column titleColumn={<div key='2'>Plants</div>} />
+                    <Column titleColumn={<div key='3'>Minerals</div>} />
                 </div>
             </section>
         )
