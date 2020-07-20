@@ -7,8 +7,8 @@ import { settings } from '../../data/dataStore';
 class List extends React.Component { // definicja klasy List. Klasa List dziedziczy z klasy React.Component
     static propTypes = { // definicja typów propsów
         title: PropTypes.node.isRequired, // definicja typu Propsa (node) z zaznaczeniem że jest on wymagany (ten komponent MUSI otrzymać daną wartość)
-        image: PropTypes.node.isRequired,
-        titleColumn: PropTypes.node.isRequired,
+        image: PropTypes.node,
+        titleColumn: PropTypes.node,
         children: PropTypes.node.isRequired,
     };
     static defaultProps = { // ustawienie domyślnych wartości parametrów, kiedy nie zostanie podana żadna zawartośc opisu listy, czyli to jest domyślny opis listy
@@ -18,7 +18,7 @@ class List extends React.Component { // definicja klasy List. Klasa List dziedzi
         return ( // metoda return zwraca obiekt JSX, a konkretniej div
             <section id="list" className={styles.component}>
                 <Hero titleText={this.props.title}
-                      imageFile={this.props.image} />
+                    image={<img key='2' src="http://uploads.kodilla.com/bootcamp/fer/11.react/space.png" />} />
                 <div className={styles.description}>
                     {this.props.children}
                 </div>
