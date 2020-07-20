@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 class Column extends React.Component {
     static propTypes = {
         titleColumn: PropTypes.node.isRequired,
-    }
+    };
     render() {
         return (
             <section className={styles.component}>
-                <h3 className={styles.columns}>{props.titleColumn}</h3>
+                <h3 className={styles.title}>{this.props.titleColumn}</h3>
             </section>
-        )
+        );
     }
 }
 

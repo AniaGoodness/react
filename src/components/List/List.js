@@ -1,28 +1,31 @@
-import React from 'react';
+import React from 'react'; // import biblioteki React
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
 import PropTypes from 'prop-types';
-class List extends React.Component {
-    static propTypes = {
-        title: PropTypes.node.isRequired,
+import { settings } from '../../data/dataStore';
+class List extends React.Component { // definicja klasy List. Klasa List dziedziczy z klasy React.Component
+    static propTypes = { // definicja typów propsów
+        title: PropTypes.node.isRequired, // definicja typu Propsa (node) z zaznaczeniem że jest on wymagany (ten komponent MUSI otrzymać daną wartość)
         image: PropTypes.node.isRequired,
-        columns: PropTypes.node.isRequired,
+        columns: PropTypes.array.isRequired,
         children: PropTypes.node.isRequired,
-    }
-    static defaultProps = {
+    };
+    static defaultProps = { // ustawienie domyślnych wartości parametrów, kiedy nie zostanie podana żadna zawartośc opisu listy, czyli to jest domyślny opis listy
         children: <p>Interesting things I want to check out!</p>,
     }
-    render() {
-        return (
+    render() { // metoda render - od niej zależy to co wyświetli się w przeglądarce
+        return ( // metoda return zwraca obiekt JSX, a konkretniej div
             <section id="list" className={styles.component}>
                 <Hero titleText={this.props.title}
                       imageFile={this.props.image} />
                 <div className={styles.description}>
                     {this.props.children}
                 </div>
-                <div className={styles.component}>
-                    <Column titleColumn={this.props.columns} />
+                <div className={styles.columns}>
+                    <Column titleColumn={'Animals'} />
+                    <Column titleColumn={'Plants'} />
+                    <Column titleColumn={'Minerals'} />
                 </div>
             </section>
         )
