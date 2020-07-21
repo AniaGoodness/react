@@ -18,7 +18,7 @@ class List extends React.Component { // definicja klasy List. Klasa List dziedzi
         return ( // metoda return zwraca obiekt JSX, a konkretniej div
             <section id="list" className={styles.component}>
                 <Hero titleText={this.props.title}
-                    image={<img key='2' src="http://uploads.kodilla.com/bootcamp/fer/11.react/space.png" />} />
+                    imageFile={"http://uploads.kodilla.com/bootcamp/fer/11.react/space.png"} />
                 <div className={styles.description}>
                     {this.props.children}
                 </div>
