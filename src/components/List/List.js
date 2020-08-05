@@ -4,7 +4,7 @@ import Hero from '../Hero/Hero.js';
 import Column from '../Column/Column.js';
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
-import { settings, listData } from '../../data/dataStore';
+import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser'; 
 
 class List extends React.Component {
@@ -24,9 +24,6 @@ class List extends React.Component {
         description: settings.defaultListDescription,
     }
 
-    static columns = {
-        title: listData.title,
-    }
     addColumn(title) {
         this.setState(state => (
             {
