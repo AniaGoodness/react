@@ -20,11 +20,11 @@ class List extends React.Component {
     description: settings.defaultListDescription,
   }
   render() {
-    const {title, description, columns, addColumn} = this.props;
+    const {title, description, columns, addColumn, image} = this.props;
     return (
       <section id="list" className={styles.component}>
         <Hero titleText={title}
-          imageFile={'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png'} />
+          imageFile={image} />
         <div className={styles.description}>
           {ReactHtmlParser(description)}
         </div>
